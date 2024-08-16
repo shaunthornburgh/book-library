@@ -9,18 +9,17 @@ import {
   Navigate,
 } from "react-router-dom";
 import BookDetails from "./components/BookDetails";
+import NotFound from "./components/NotFound";
 
 function App() {
   return (
     <BooksProvider>
       <Router>
         <Routes>
-          <Route path="/" element={<Books></Books>}></Route>
-          <Route path="/books" element={<Navigate to={"/"} />}></Route>
-          <Route
-            path="/books/:bookId"
-            element={<BookDetails></BookDetails>}
-          ></Route>
+          <Route path="/" element={<Books />} />
+          <Route path="/books" element={<Navigate to={"/"} />} />
+          <Route path="/books/:bookId" element={<BookDetails />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </BooksProvider>
